@@ -510,33 +510,34 @@
         <br>
       <div class="contact-form">
 
+
         <div id="form-messages"></div>
-        <form id="ajax-contact" method="post" role="form" action="javascript:void(0);" data-toggle="validator">
-          <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Adınız" data-error="Alan boş olamaz!" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <div class="help-block with-errors"></div>
-          </div>
-        
-          <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
-            <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" data-error="Alan boş olamaz!!" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <div class="help-block with-errors"></div>
-          </div>
-        
-          <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
-            <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="Mesaj" data-error="Minimum 10 karakter" required></textarea>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <div class="help-block with-errors"></div>
-          </div>
-        
-          <div class="hidden">
-            <input type="text" class="form-control" id="human" name="human" placeholder="">
-          </div>
-          <div class="wow fadeInUp" data-wow-delay="1s">
-            <button type="button" id="submit" class="btn btn-warning" onclick="sendEmail()"><i class="fa-solid fa-paper-plane-top"></i>  MESAJ GÖNDER</button>
-          </div>
-        </form>
+<form id="ajax-contact" method="post" role="form" data-toggle="validator">
+    <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Adınız" data-error="Alan boş olamaz!" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" data-error="Alan boş olamaz!" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
+        <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="Mesaj" data-error="Minimum 10 karakter" required></textarea>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="hidden">
+        <input type="text" class="form-control" id="human" name="human" placeholder="">
+    </div>
+    <div class="wow fadeInUp" data-wow-delay="1s">
+        <button type="button" id="submit" class="btn btn-warning"><i class="fa-solid fa-paper-plane-top"></i>  MESAJ GÖNDER</button>
+    </div>
+</form>
       <br>
       </div>
   </div>
@@ -578,5 +579,39 @@
   primary: "html5",
   });
   </script>
+
+<script>
+    $(document).ready(function(){
+        $('#submit').click(function(e){
+            e.preventDefault(); // Formun normal gönderimini engelle
+
+            // Form verilerini topla
+            var formData = {
+                'name': $('#name').val(),
+                'email': $('#email').val(),
+                'message': $('#message').val(),
+                'human': $('#human').val() // Bot kontrolü için gizli alan
+            };
+
+            // AJAX isteği
+            $.ajax({
+                type: 'POST',
+                url: 'iletisim.php', // Formun gönderileceği sunucu tarafı betiği
+                data: formData,
+                dataType: 'json',
+                encode: true,
+                success: function(response){
+                    // Başarılı yanıt işlemleri
+                    $('#form-messages').html('<div class="alert alert-success">' + response.message + '</div>');
+                    $('#ajax-contact')[0].reset(); // Formu temizle
+                },
+                error: function(response){
+                    // Hata yanıt işlemleri
+                    $('#form-messages').html('<div class="alert alert-danger">Mesaj gönderilemedi. Lütfen tekrar deneyin.</div>');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
