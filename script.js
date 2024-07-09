@@ -49,24 +49,6 @@ window.addEventListener('load', startSlider);
 
 /* Job end*/
 
-function sendEmail() {
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var message = document.getElementById('message').value;
-
-  // Example of sending email via mailto
-  var subject = 'Gönderen: ' + name;
-  var body = 'E-posta Adresi: ' + email + '\n\n' + message;
-
-  var mailtoLink = 'mailto:talkshow@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
- 
-  window.location.href = mailtoLink;
-
-  document.getElementById('ajax-contact').reset();
-}
-
-
 /* */
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
