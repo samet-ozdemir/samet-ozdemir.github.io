@@ -140,8 +140,10 @@ z-index: 500;
 .horizontal-timeline {
   width: 100%;
   overflow-x: auto;
-  white-space: normal; /* ya da white-space: pre-wrap; */
+  white-space: nowrap; /* Yatay kaydırma için nowrap kullanıldı */
   position: relative;
+  padding: 20px;
+  box-sizing: border-box; /* Kutu boyutlandırma modelini ayarlamak için */
 }
 
 .horizontal-timeline:before {
@@ -149,7 +151,7 @@ z-index: 500;
   position: absolute;
   top: 50%;
   left: 0;
-  width: 180%; /* Çizgi genişliğini artırmak için */
+  width: 170%; /* Çizgi genişliğini ayarlamak için */
   height: 2px;
   background-color: #ccc;
   z-index: -1;
@@ -157,7 +159,7 @@ z-index: 500;
 
 .horizontal-timeline .timeline {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 50px 0;
 }
@@ -168,6 +170,8 @@ z-index: 500;
   width: calc(33.3333% - 40px);
   text-align: center;
   margin: 0 20px;
+  box-sizing: border-box; /* Kutu boyutlandırma modelini ayarlamak için */
+  overflow: hidden; /* Taşan metni gizlemek için */
 }
 
 .horizontal-timeline .timeline-year {
@@ -182,36 +186,41 @@ z-index: 500;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden; /* Taşan metni gizlemek için */
+  text-overflow: ellipsis; /* Metni taşan alanlarda kesmek için */
+  white-space: nowrap; /* Metnin tek satırda kalmasını sağlamak için */
 }
 
 .horizontal-timeline .timeline-content h3 {
   color: white;
   font-size: 18px;
   margin-bottom: 10px;
+  white-space: normal; /* Başlıklar için normal beyaz boşluk */
 }
 
 .horizontal-timeline .timeline-content p {
   font-size: 14px;
   color: #d27c06;
   margin-bottom: 8px;
+  white-space: normal; /* Paragraflar için normal beyaz boşluk */
 }
 
 .horizontal-timeline .timeline-item .timeline-content {
-background-color: #252525;
-padding: 20px;
-border-radius: 10px 100px / 90%;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #252525;
+  padding: 20px;
+  border-radius: 10px 100px / 90%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden; /* Taşan metni gizlemek için */
 }
 
 .horizontal-timeline .timeline-item:hover .timeline-content {
-transform: scale(1.05); /* Kartın büyüklüğünü artırmak için */
-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
+/* 𝓢𝓶𝓣 */
 
-
-/* */
+/* Eğitim Timeline son*/
 
 
 
@@ -250,7 +259,7 @@ transition: transform 0.3s ease;
   text-align: center;
   padding-top: 10%;
 }
-
+/* 𝓢𝓶𝓣 */
 
 .nav-links a {
   color: #FFFFFF;
@@ -296,6 +305,7 @@ transition: transform 0.3s ease;
   opacity: 1;
   width: 100%;
 }
+/* 𝓢𝓶𝓣 */
 
 /* Profil  */
 
@@ -309,7 +319,7 @@ transition: transform 0.3s ease;
   flex-direction: row;
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  position: relative; /* Pseudo-elementler için gerekli */
+  position: relative; 
 }
 
 .profile-card::before, .profile-card::after {
@@ -324,6 +334,8 @@ transition: transform 0.3s ease;
   top: -1px;
   left: -1px;
 }
+
+/* 𝓢𝓶𝓣 */
 
 .profile-card::after {
   bottom: -1px;
@@ -359,6 +371,8 @@ transition: transform 0.3s ease;
   border-radius: 20%;
 }
 
+/* 𝓢𝓶𝓣 */
+
 .text-content h1 {
   color: white;
   font-family: "Manrope", sans-serif;
@@ -391,6 +405,8 @@ transition: transform 0.3s ease;
   gap: 15px;
 }
 
+/* 𝓢𝓶𝓣 */
+
 .social-icon {
   color: white;
   text-decoration: none;
@@ -406,11 +422,101 @@ transition: transform 0.3s ease;
 /* profil son*/
 
 
+
+/* Modal */
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background-color: #2c2c2c;
+  border-radius: 5px;
+  width: 90%; 
+  max-width: 900px; 
+  height: 90%; 
+}
+
+.close {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff; /* Kapatma butonunun rengi */
+  opacity: 0.9; /* Başlangıçta biraz saydamlık uygula */
+  transition: opacity 0.3s ease; /* Opacity geçiş efekti */
+}
+
+.close:hover,
+.close:focus {
+  opacity: 0.6;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Son*/
+
+
 /* Haber*/
+.splide {
+  padding: 7px 0;
+}
+.splide__slide img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 400ms;
+  transform: scale(.9);
+  transform-origin: center center;
+}
+.splide__slide.is-active img {
+  transform: scale(1);
+}
+.splide .splide__arrow {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  transform: none;
+  border-radius: unset;
+  width: 50px;
+  opacity: .9;
+}
+.splide__arrow svg {
+  filter: invert(1);
+  width: 24px;
+  height: 24px;
+}
+.splide__arrow.splide__arrow--prev {
+  left: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%);
+}
+.splide__arrow.splide__arrow--next {
+  right: 0;
+  background: linear-gradient(270deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%);
+}
+
 .items {
   display: flex;
-  overflow: auto;
+  overflow-x: auto;
   padding-bottom: 20px; /* Altta kaydırma çubuğu için boşluk bırak */
+  scroll-snap-type: x mandatory; /* Kaydırma hizalama için */
 }
 
 .item {
@@ -418,7 +524,6 @@ transition: transform 0.3s ease;
   width: 500px;
   margin-right: 20px;
   scroll-snap-align: start;
-  
 }
 
 .item-top img {
@@ -428,8 +533,6 @@ transition: transform 0.3s ease;
 
 .item-info {
   padding: 10px;
-  background-color: #f2f2f2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .item-info h2 {
@@ -448,13 +551,6 @@ transition: transform 0.3s ease;
   color: white;
   font-size: 15px;
 }
-
-.item-info {
-  padding: 10px;
-  background-color: #363636;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
 
 .grid-row {
   display: grid;
@@ -481,7 +577,6 @@ transition: transform 0.3s ease;
   overflow: hidden;
 }
 
-
 .flex-row {
   display: flex;
   align-items: center;
@@ -492,23 +587,26 @@ transition: transform 0.3s ease;
   margin-top: 20px;
 }
 
-
 .read-more {
   text-decoration: none;
   color: #dd8300;
   font-weight: 600;
-  margin-top: 15px;;
+  margin-top: 15px;
 }
 
 a {
   color: #dd8300;
 }
+
 a:hover {
   color: #ffb13b;
 }
-a:focus, a:hover {
+
+a:focus,
+a:hover {
   color: #ffb13b;
 }
+
 
 /* Haber Son */ 
 
@@ -570,23 +668,25 @@ span.cursor.typing {
 
 .opaque-bg img {
   width: 250px;
-  border-radius: 50%; /* Yuvarlak profil resmi */
-  margin-right: 20px; /* Yazıdan önce boşluk bırakalım */
+  border-radius: 50%; 
+  margin-right: 20px; 
 }
 
+/* 𝓢𝓶𝓣 */
+
 .opaque-bg .text-content {
-  flex: 1; /* Yazı içeriğini genişletmek için */
+  flex: 1; 
 }
 
 .opaque-bg h1 {
   font-size: 3em;
-  margin-bottom: 10px; /* Başlık altına boşluk ekleyelim */
+  margin-bottom: 10px;
 }
 
 .opaque-bg p {
   font-size: 17.4px;
   font-weight: 100;
-  margin-top: 0; /* Paragrafın üst boşluğunu sıfırlayalım */
+  margin-top: 0; 
 }
 
 
@@ -933,10 +1033,10 @@ animation-play-state: running;
   font-weight: bold;
 }
 
-/* Bootstrap'un varsayılan stillerini geçersiz kılma */
+
 .form-control:focus {
-  border-color: #dd8300; /* Kenarlık rengi */
-  box-shadow: 0 0 0 0.2rem rgba(221, 131, 0, 0.25); /* İsteğe bağlı: odaklandığında gölge */
+  border-color: #dd8300; 
+  box-shadow: 0 0 0 0.2rem rgba(221, 131, 0, 0.25); 
 }
 
 
@@ -967,7 +1067,7 @@ label {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: transparent; /* Arkaplan rengini şeffaf yapar */
+  background-color: transparent; 
 }
 
 #submit:hover {
@@ -1093,6 +1193,7 @@ label {
   }
 }
 
+/* 𝓢𝓶𝓣 */
 
 .blinking-cursor {
   font-weight: 500;
@@ -1115,6 +1216,8 @@ from, to {
 }
 }
 
+/* 𝓢𝓶𝓣 */
+
 @-moz-keyframes blink {
 from, to {
   color: transparent;
@@ -1132,6 +1235,8 @@ from, to {
   color: white;
 }
 }
+
+/* 𝓢𝓶𝓣 */
 
 @-ms-keyframes blink {
 from, to {
@@ -1163,6 +1268,8 @@ border: 1px solid #d6e9c6;
         border-radius: 4px;
 }
 
+/* 𝓢𝓶𝓣 */
+
 .error {
 padding: 1em;
 margin-bottom: 0.75rem;
@@ -1174,3 +1281,5 @@ border: 1px solid rgba(185, 74, 72, 0.3);
    -moz-border-radius: 4px;
         border-radius: 4px;
 }
+
+/* 𝓢𝓶𝓣 */

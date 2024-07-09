@@ -53,7 +53,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
   
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+
   <title>Samet Özdemir</title>
 </head>
 
@@ -77,6 +78,9 @@
     </div>
   </div>
 </div>
+
+<!-- 𝓢𝓶𝓣 -->
+
 <!-- end navbar header -->
 
 <!-- sidebar slider -->
@@ -115,7 +119,7 @@
         <div class="social-icons">
           <a target="_blank" href="https://www.instagram.com/smt.ozdemr/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
           <a target="_blank" href="https://www.linkedin.com/in/samet-ozdmr/" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a target="_blank" href="https://github.com/ozdmr-smt" class="social-icon"><i class="fa-brands fa-github-alt"></i></a>
+          <a target="_blank" href="https://github.com/samet-ozdemir" class="social-icon"><i class="fa-brands fa-github-alt"></i></a>
           <a target="_blank" href="https://x.com/ozdmr_smt" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
           <a target="_blank" href="https://open.spotify.com/user/zehram2161" class="social-icon"><i class="fa-brands fa-spotify"></i></a>
           <a href="mailto:talkshow@outlook.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
@@ -135,16 +139,19 @@
     <div class="content">
     
       <h1 class="wow fadeInDown" data-wow-delay="0.2s">HAKKIMDA</h1>
-      <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 18px;">Merhaba, ben Samet Özdemir. <br/>Necmettin Erbakan Üniversitesi Bilgisayar
-        Programcılığı Bölümü'nden mezunum. Web
-        geliştirme, yazılım geliştirme ve tasarım
-        alanlarında becerilere sahibim. Aynı zamanda
-        araştırmaya istekli ve meraklı biriyim. Birçok
-        projede yer aldım ve çeşitli projelerde proje
-        yöneticiliği görevi üstlendim. Hırslı, çalışkan,
-        ekip çalışmasına yatkın ve problem çözme
-        becerilerine sahip biriyim.
-        Alt kısımda sahip olduğum becerileri görebilirsiniz.</p>
+      <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 18px;">
+        Merhaba, ben Samet. 
+        Necmettin Erbakan Üniversitesi Bilgisayar 
+        Programcılığı Bölümü'nden mezunum ve web geliştirme, 
+        yazılım geliştirme ve tasarım konularında yetkinim. 
+        Çeşitli projelerde yer aldım, proje yöneticiliği yaptım 
+        ve hırslı, çalışkan bir ekip oyuncusuyum. <br/><br/>TEKNOFEST'te 
+        kazandığım Türkiye birinciliği ve NTV canlı yayınında 
+        Cumhurbaşkanı Erdoğan ile görüşmem, kariyerimde önemli 
+        dönüm noktaları oldu ve kişisel gelişimime büyük katkı sağladı.
+        <br/>
+        Aşağıda sahip olduğum becerileri bulabilirsiniz.
+      </p>
 
         
       <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
@@ -210,30 +217,51 @@
 
   <div class="section" data-anchor="projeler">
     <div class="content-slide">
-      
-      
-        <div class="slide">
-            <img class="project-image" src="img/ebits.jpg">
-            <div class="project-content">
-                <h1 class="project-title">E-BİTS</h1>
-                <p class="project-description">Ev Bina İnşaat Takip Sistemi</p>
-                <div class="butonum"><a href="https://bit.ly/e-bits" target="_blank"> <i class="fa-solid fa-eyes"></i> GÖZAT</a></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe id="pdfViewer" width="100%" height="100%" style="border: none;"></iframe>
+      </div>
+  </div>
+
+      <div class="slide">
+        <img class="project-image" src="img/ebits.jpg">
+        <div class="project-content">
+            <h1 class="project-title">E-BİTS</h1>
+            <p class="project-description">Ev Bina İnşaat Takip Sistemi</p>
+            <div class="butonum">
+                <a href="#" id="openModalBtn1">
+                    <i class="fas fa-eye"></i> GÖZAT
+                </a>
             </div>
         </div>
+    </div>
+
         <div class="slide">
             <img class="project-image" src="img/etups.jpg">
             <div class="project-content">
                 <h1 class="project-title">E-TUPS</h1>
                 <p class="project-description">Tarımsal Üretim Planlama Sistemi</p>
-                <div class="butonum"><a href="https://bit.ly/e-tups" target="_blank"> <i class="fa-solid fa-eyes"></i> GÖZAT</a></div>
+                <div class="butonum">
+                  <a href="#" id="openModalBtn2"> 
+                    <i class="fa-solid fa-eyes"></i> GÖZAT
+                  </a>
+                </div>
             </div>
         </div>
+
         <div class="slide">
             <img class="project-image" src="img/ilac-rehberi.png">
             <div class="project-content">
                 <h1 class="project-title">İLAÇ REHBERİ</h1>
                 <p class="project-description">İlaç bilgilerine daha kolay ve basit şekilde ulaşmak için.</p>
-                <div class="butonum"><a href="https://bit.ly/ilac-rehberi" target="_blank"> <i class="fa-solid fa-eyes"></i> GÖZAT</a></div>
+                <div class="butonum">
+                  <a href="#" id="openModalBtn3"> 
+                    <i class="fa-solid fa-eyes"></i> GÖZAT
+                  </a>
+                </div>
             </div>
         </div>
         <div class="slide">
@@ -389,115 +417,86 @@
 <div class="section" data-anchor="haber">
   <div class="content" data-wow-delay="0.2s">
     <h1 style="margin-top: 25px;">HABERLER VE MEDYA</h1>
-      <p style="font-size: 18px; margin-bottom: -6px;">Çalışmalarım ve başarılarım çeşitli gazete ve haber web sitelerinde yer aldı. Aşağıda, hakkımda çıkan önemli haberleri, medya yansımalarını ve röportajları bulabilirsiniz. Daha fazla bilgi edinmek için görselleri ve videoları inceleyebilirsiniz.</p>
+      <p style="font-size: 18px; margin-bottom: -15px;">Çalışmalarım ve başarılarım çeşitli gazete ve haber web sitelerinde yer aldı. Aşağıda, hakkımda çıkan önemli haberleri, medya yansımalarını ve röportajları bulabilirsiniz. Daha fazla bilgi edinmek için görselleri ve videoları inceleyebilirsiniz.</p>
       <br>
           
-      <div class="slider-container">
-        <div class="items">
-          <div class="item">
-              <div class="item-top">
-                  <img src="haber/aa.png" alt="Anadolu Ajansı">
-              </div>
+
+      <div id="splide" class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+
+            <li class="splide__slide">
+              <img src="haber/gvalilik.png" alt="GAZİANTEP VALİLİĞİ">
               <div class="item-info">
-                  <h2>Anadolu Ajansı</h2>
-                  
-                  <p class="excerpt">TEKNOFEST'e katılmaya hak kazanan ancak yeni tip koronavirüs (Kovid-19) nedeniyle karantinada kalan iki öğrenci, stantlarına görüntülü bağlanarak aralarında Cumhurbaşkanı Recep Tayyip Erdoğan'ın da olduğu ziyaretçilerine projelerini anlattı...</p>
-              </div>
-              <div class="item-bottom flex-row">
-                  <a target="_blank" href="https://www.aa.com.tr/tr/bilim-teknoloji/teknofest-heyecanlarina-kovid-19-bile-engel-olamadi/1988027" class="read-more">Habere Git</a>
-              </div>
-          </div>
-
-          <div class="item">
-            <div class="item-top">
-                <img src="haber/gmem.png" alt="Gmem">
-            </div>
-            <div class="item-info">
-                <h2>GAZİANTEP İL MİLLİ EĞİTİM MÜDÜRLÜĞÜ</h2>
-                
-                <p class="excerpt">TEKNOFEST2020’de Türkiye birincisi olan Ayvaz Burçkan Mesleki ve Teknik Anadolu Lisesi takımında bulunan öğrencilerimiz, Samet Özdemir ve Selin İrem Şeref İl Müdürümüz Yasin Tepe’yi ziyaret etti...</p>
-            </div>
-            <div class="item-bottom flex-row">
-                <a target="_blank" href="https://x.com/Gaziantep_MEM/status/1317103640201617409" class="read-more">Habere Git</a>
-            </div>
-        </div>
-
-          <div class="item">
-              <div class="item-top">
-                  <div id="videoPlayer"></div>
-              </div>
-              <div class="item-info">
-                  <h2>NTV</h2>
-
-                  <p class="excerpt">NTV canlı yayınında, Cumhurbaşkanı Recep Tayyip Erdoğan'a "E-BİTS" adlı afet yönetimi projesini tanıttık...</p>
-              </div>
-              <div class="item-bottom flex-row">
-                  <!--a href="#" target="_blank" class="read-more">Habere Git</a-->
-              </div>
-          </div>
-
-          <div class="item">
-            <div class="item-top">
-                <img src="haber/gvalilik.png" alt="Gaziantep Valilik">
-            </div>
-            <div class="item-info">
                 <h2>GAZİANTEP VALİLİĞİ</h2>
-                
                 <p class="excerpt">Gaziantep Valisi Davut Gül'ü ziyaret ettik ve projemiz hakkında bilgi verdik...</p>
-            </div>
-            <div class="item-bottom flex-row">
-                <a target="_blank" href="http://www.gaziantep.gov.tr/teknofest-2020-ucuncu-yilini-da-gaziantepte-basariyla-tamamladi" class="read-more">Habere Git</a>
-            </div>
-        </div>
-
-
-          <div class="item">
-              <div class="item-top">
-                  <img src="haber/sabah.jpg" alt="Sabah">
+                <a href="http://www.gaziantep.gov.tr/teknofest-2020-ucuncu-yilini-da-gaziantepte-basariyla-tamamladi" class="read-more" target="_blank">Habere Git</a>
               </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="videoPlayer"></div>
               <div class="item-info">
-                  <h2>SABAH</h2>
-                  
-                  <p class="excerpt">Gaziantep’in bir köyündeki meslek lisesi öğrencileri, depremi önlemek amacıyla hazırladığı e-bina takip sisteminin e-devlet programına eklenmesi halinde depremin önleneceğini söyledi...</p>
+                <h2>NTV</h2>
+                <p class="excerpt">NTV canlı yayınında, Cumhurbaşkanı Recep Tayyip Erdoğan'a "E-BİTS" adlı afet yönetimi projesini tanıttık...</p>
+                <!--a href="#" class="read-more" target="_blank">Habere Git</a-->
               </div>
-              <div class="item-bottom flex-row">
-                  <a href="https://www.sabah.com.tr/gundem/2020/10/05/koyden-sampiyon-cikti" target="_blank" class="read-more">Habere Git</a>
-              </div>
-          </div>
+            </li>
 
-          <div class="item">
-            <div class="item-top">
-                <img src="haber/hürriyet.png" alt="Hürriyet">
-            </div>
-            <div class="item-info">
+            <li class="splide__slide">
+              <img src="haber/gmem.png" alt="GAZİANTEP İL MİLLİ EĞİTİM MÜDÜRLÜĞÜ">
+              <div class="item-info">
+                <h2>GAZİANTEP İL MİLLİ EĞİTİM MÜDÜRLÜĞÜ</h2>
+                <p class="excerpt">TEKNOFEST2020’de Türkiye birincisi olan Ayvaz Burçkan Mesleki ve Teknik Anadolu Lisesi takımında bulunan öğrencilerimiz, Samet Özdemir ve Selin İrem Şeref İl Müdürümüz Yasin Tepe’yi ziyaret etti...</p>
+                <a href="https://x.com/Gaziantep_MEM/status/1317103640201617409" class="read-more" target="_blank">Habere Git</a>
+              </div>
+            </li>
+
+
+            <li class="splide__slide">
+              <img src="haber/aa.png" alt="Anadolu Ajansı">
+              <div class="item-info">
+                <h2>Anadolu Ajansı</h2>
+                <p class="excerpt">TEKNOFEST'e katılmaya hak kazanan ancak yeni tip koronavirüs (Kovid-19) nedeniyle karantinada kalan iki öğrenci, stantlarına görüntülü bağlanarak aralarında Cumhurbaşkanı Recep Tayyip Erdoğan'ın da olduğu ziyaretçilerine projelerini anlattı...</p>
+                <a href="https://www.aa.com.tr/tr/bilim-teknoloji/teknofest-heyecanlarina-kovid-19-bile-engel-olamadi/1988027" class="read-more" target="_blank">Habere Git</a>
+              </div>
+            </li>
+
+
+            <li class="splide__slide">
+              <img src="haber/sabah.jpg" alt="Sabah">
+              <div class="item-info">
+                <h2>SABAH</h2>
+                <p class="excerpt">Gaziantep’in bir köyündeki meslek lisesi öğrencileri, depremi önlemek amacıyla hazırladığı e-bina takip sisteminin e-devlet programına eklenmesi halinde depremin önleneceğini söyledi...</p>
+                <a href="https://www.sabah.com.tr/gundem/2020/10/05/koyden-sampiyon-cikti" class="read-more" target="_blank">Habere Git</a>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <img src="haber/hürriyet.png" alt="HÜRRİYET">
+              <div class="item-info">
                 <h2>HÜRRİYET</h2>
-                
                 <p class="excerpt">Festival kapsamında proje üreten Şahinbey Bilişim Yıldızları Takımı üyesi 11. sınıf öğrencisi Emine Tosun ile takım arkadaşı 12. sınıf öğrencisi Samet Özdemir ise Kovid-19 nedeniyle karantinada kaldıkları için stantlarının başında yer alamadı...</p>
-            </div>
-            <div class="item-bottom flex-row">
-                <a href="https://www.hurriyet.com.tr/teknoloji/koronavirus-bile-teknofest-heyecanina-engel-olamadi-41623070" target="_blank" class="read-more">Habere Git</a>
-            </div>
-          </div>
+                <a href="https://www.hurriyet.com.tr/teknoloji/koronavirus-bile-teknofest-heyecanina-engel-olamadi-41623070" class="read-more" target="_blank">Habere Git</a>
+              </div>
+            </li>
 
-        <div class="item">
-          <div class="item-top">
+            <li class="splide__slide">
               <img src="haber/yenisafak.png" alt="Yeni Şafak">
-          </div>
-          <div class="item-info">
-              <h2>YENİ ŞAFAK</h2>
-              
-              <p class="excerpt">TEKNOFEST’in Gaziantep’teki festivalinde projeleri birinci olan 11. sınıf öğrencisi Emine Tosun ile takım arkadaşı 12. sınıf öğrencisi Samet Özdemir karantina nedeniyle ödül törenine katılamadı. Samet Özdemir, “Cumhurbaşkanımızla yüz yüze görüşmeyi çok isterdim” diye konuştu...</p>
-          </div>
-          <div class="item-bottom flex-row">
-              <a href="https://www.yenisafak.com/teknoloji/teknofest-heyecanina-kovid-19-engel-olamadi-orada-olmayi-cok-isterdik-3568982" target="_blank" class="read-more">Habere Git</a>
-          </div>
+              <div class="item-info">
+                <h2>Yeni Şafak</h2>
+                <p class="excerpt">TEKNOFEST’in Gaziantep’teki festivalinde projeleri birinci olan 11. sınıf öğrencisi Emine Tosun ile takım arkadaşı 12. sınıf öğrencisi Samet Özdemir karantina nedeniyle ödül törenine katılamadı. Samet Özdemir, “Cumhurbaşkanımızla yüz yüze görüşmeyi çok isterdim” diye konuştu...</p>
+                <a href="https://www.yenisafak.com/teknoloji/teknofest-heyecanina-kovid-19-engel-olamadi-orada-olmayi-cok-isterdik-3568982" class="read-more" target="_blank">Habere Git</a>
+              </div>
+            </li>
+
+
+          </ul>
         </div>
+      </div>
 
       </div>
-    </div>
-
-</div>
-</div>
+  </div>
 <!-- end section -->
 
 
@@ -510,34 +509,33 @@
         <br>
       <div class="contact-form">
 
-
         <div id="form-messages"></div>
-<form id="ajax-contact" method="post" role="form" data-toggle="validator">
-    <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
-        <input type="text" class="form-control" id="name" name="name" placeholder="Adınız" data-error="Alan boş olamaz!" required>
-        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-        <div class="help-block with-errors"></div>
-    </div>
-
-    <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
-        <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" data-error="Alan boş olamaz!" required>
-        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-        <div class="help-block with-errors"></div>
-    </div>
-
-    <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
-        <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="Mesaj" data-error="Minimum 10 karakter" required></textarea>
-        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-        <div class="help-block with-errors"></div>
-    </div>
-
-    <div class="hidden">
-        <input type="text" class="form-control" id="human" name="human" placeholder="">
-    </div>
-    <div class="wow fadeInUp" data-wow-delay="1s">
-        <button type="button" id="submit" class="btn btn-warning"><i class="fa-solid fa-paper-plane-top"></i>  MESAJ GÖNDER</button>
-    </div>
-</form>
+        <form id="ajax-contact" method="post" role="form" action="javascript:void(0);" data-toggle="validator">
+          <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Adınız" data-error="Alan boş olamaz!" required>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
+          </div>
+        
+          <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" data-error="Alan boş olamaz!!" required>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
+          </div>
+        
+          <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
+            <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="Mesaj" data-error="Minimum 10 karakter" required></textarea>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
+          </div>
+        
+          <div class="hidden">
+            <input type="text" class="form-control" id="human" name="human" placeholder="">
+          </div>
+          <div class="wow fadeInUp" data-wow-delay="1s">
+            <button type="button" id="submit" class="btn btn-warning" onclick="sendEmail()"><i class="fa-solid fa-paper-plane-top"></i>  MESAJ GÖNDER</button>
+          </div>
+        </form>
       <br>
       </div>
   </div>
@@ -558,6 +556,10 @@
   </div>
   <!-- end section -->
 
+
+<!-- 𝓢𝓶𝓣 -->
+
+  
 </div>
 <!-- end fullpage -->
 
@@ -574,44 +576,14 @@
 <script type="text/javascript">
   jwplayer('videoPlayer').setup({
   file: 'haber/ntv.mp4',
-  image: "img/ntv.png",
+  image: "haber/ntv.png",
   autostart: 0,
   primary: "html5",
   });
   </script>
 
-<script>
-    $(document).ready(function(){
-        $('#submit').click(function(e){
-            e.preventDefault(); // Formun normal gönderimini engelle
-
-            // Form verilerini topla
-            var formData = {
-                'name': $('#name').val(),
-                'email': $('#email').val(),
-                'message': $('#message').val(),
-                'human': $('#human').val() // Bot kontrolü için gizli alan
-            };
-
-            // AJAX isteği
-            $.ajax({
-                type: 'POST',
-                url: 'iletisim.php', // Formun gönderileceği sunucu tarafı betiği
-                data: formData,
-                dataType: 'json',
-                encode: true,
-                success: function(response){
-                    // Başarılı yanıt işlemleri
-                    $('#form-messages').html('<div class="alert alert-success">' + response.message + '</div>');
-                    $('#ajax-contact')[0].reset(); // Formu temizle
-                },
-                error: function(response){
-                    // Hata yanıt işlemleri
-                    $('#form-messages').html('<div class="alert alert-danger">Mesaj gönderilemedi. Lütfen tekrar deneyin.</div>');
-                }
-            });
-        });
-    });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
 </body>
 </html>
+
+<!-- 𝓢𝓶𝓣 -->

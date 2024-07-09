@@ -1,3 +1,55 @@
+/* Modal */
+/* 𝓢𝓶𝓣 */
+document.addEventListener('DOMContentLoaded', function() {
+  var openModalBtn1 = document.getElementById('openModalBtn1');
+  var openModalBtn2 = document.getElementById('openModalBtn2');
+  var openModalBtn3 = document.getElementById('openModalBtn3');
+  var modal = document.getElementById('modal');
+  var closeModal = document.querySelector('.close');
+  var pdfViewer = document.getElementById('pdfViewer');
+/* 𝓢𝓶𝓣 */
+
+  var ebits = 'https://drive.google.com/file/d/1OLIqHPK3PxOONH059BZhkaHZwRGqMBxH/preview';
+  var etups = 'https://drive.google.com/file/d/1Tz103dG5y0oqP_Xm-3TXIMyLPsSDBz9m/preview';
+  var ilac = 'https://drive.google.com/file/d/1Hi4e-rbmsGu9SgDsYP40bWtEIIZDRbwe/preview';
+
+  openModalBtn1.addEventListener('click', function(e) {
+      e.preventDefault();
+      pdfViewer.src = ebits;
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; 
+  });
+
+  openModalBtn2.addEventListener('click', function(e) {
+      e.preventDefault();
+      pdfViewer.src = etups;
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; 
+  });
+
+  openModalBtn3.addEventListener('click', function(e) {
+      e.preventDefault();
+      pdfViewer.src = ilac;
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; 
+  });
+
+  closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = ''; 
+  });
+
+  window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; 
+      }
+  });
+});
+
+/* Modal  son*/
+
+
 /* Job */
 let currentIndex = 0;
 const intervalTime = 5000; 
@@ -49,6 +101,24 @@ window.addEventListener('load', startSlider);
 
 /* Job end*/
 
+function sendEmail() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+
+  // Example of sending email via mailto
+  var subject = 'Gönderen: ' + name;
+  var body = 'E-posta Adresi: ' + email + '\n\n' + message;
+
+  var mailtoLink = 'mailto:talkshow@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+ 
+  window.location.href = mailtoLink;
+
+  document.getElementById('ajax-contact').reset();
+}
+
+
 /* */
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
@@ -88,6 +158,7 @@ function erase() {
     setTimeout(type, typingDelay + 1100);
   }
 }
+/* 𝓢𝓶𝓣 */
 
 document.addEventListener("DOMContentLoaded", function() { 
   if(textArray.length) setTimeout(type, newTextDelay + 250);
@@ -206,6 +277,72 @@ $(document).ready(function () {
     });
   });
 
-
+/* 𝓢𝓶𝓣 */
 
 });
+
+
+/* Slider */
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#splide', {
+    type: 'loop',
+    perPage: 1,
+    focus: 'center',
+    autoplay: true,
+    interval: 8000,
+    flickMaxPages: 3,
+    updateOnMove: true,
+    pagination: false,
+    padding: '10%',
+    throttle: 300,
+    breakpoints: {
+      1440: {
+        perPage: 1,
+        padding: '30%'
+      }
+    }
+  }).mount();
+});
+/* Slider Son */
+
+/* Kaydırma */
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollContainers = document.querySelectorAll('.horizontal-timeline');
+
+  scrollContainers.forEach(container => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      container.classList.add('active');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1; 
+      container.scrollLeft = scrollLeft - walk;
+    });
+  });
+});
+
+
+/* Kaydırma Son*/
+
+
+/* 𝓢𝓶𝓣 */
