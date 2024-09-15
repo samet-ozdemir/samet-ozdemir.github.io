@@ -151,7 +151,7 @@ z-index: 500;
   position: absolute;
   top: 50%;
   left: 0;
-  width: 170%; /* Çizgi genişliğini ayarlamak için */
+  width: 100%; /* Çizgi genişliğini ayarlamak için */
   height: 2px;
   background-color: #ccc;
   z-index: -1;
@@ -1283,3 +1283,10 @@ border: 1px solid rgba(185, 74, 72, 0.3);
 }
 
 /* 𝓢𝓶𝓣 */
+
+.sertifika img {
+  width: 90%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
