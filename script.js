@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var openModalBtn1 = document.getElementById('openModalBtn1');
   var openModalBtn2 = document.getElementById('openModalBtn2');
   var openModalBtn3 = document.getElementById('openModalBtn3');
+
   var modal = document.getElementById('modal');
   var closeModal = document.querySelector('.close');
   var pdfViewer = document.getElementById('pdfViewer');
@@ -33,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden'; 
   });
+
+
 
   closeModal.addEventListener('click', function() {
       modal.style.display = 'none';
@@ -212,8 +215,8 @@ $(document).ready(function () {
     scrollBar: true,
     responsiveWidth: 400,
     navigation: true,
-    navigationTooltips: ['Anasayfa', 'Hakkımda', 'Projeler', 'Eğitim', 'Deneyim', 'Haberler', 'İletişim', 'Sosyal'],
-    anchors: ['anasayfa', 'hakkimda' ,'projeler', 'egitim', 'deneyim','haber', 'iletisim', 'sosyal'],
+    navigationTooltips: ['Anasayfa', 'Hakkımda', 'Projeler', 'Sertifika' , 'Eğitim', 'Deneyim', 'Haberler', 'İletişim', 'Sosyal'],
+    anchors: ['anasayfa', 'hakkimda' ,'projeler', 'sertifika', 'egitim', 'deneyim', 'haber', 'iletisim', 'sosyal'],
     menu: '#myMenu',
     fitToSection: false,
 
@@ -346,3 +349,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* 𝓢𝓶𝓣 */
+
